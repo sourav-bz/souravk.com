@@ -63,7 +63,7 @@ export default function Home() {
                         </span>
                       </div>
                     </div>
-                    {post.image && (
+                    {/* {post.image && (
                       <div className="w-32 h-24 relative rounded-lg overflow-hidden bg-gray-100">
                         <Image
                           src={post.image}
@@ -72,7 +72,7 @@ export default function Home() {
                           className="object-cover"
                         />
                       </div>
-                    )}
+                    )} */}
                   </Link>
                 </article>
               ))}

@@ -1,8 +1,6 @@
-import "../styles/global.css";
-import { Inter } from "next/font/google";
+import "./global.css";
 import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
+import { satoshi } from "./fonts";
 
 export const metadata = {
   title: "Sourav",
@@ -15,14 +13,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={satoshi.className}>
+      <body>
         <div className="min-h-screen bg-gray-50">
           {/* Sidebar */}
           <aside className="fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 p-8">
             <div className="space-y-8">
               <div>
-                <h1 className="text-2xl font-serif font-bold">Sourav</h1>
+                <h1 className="text-2xl font-bold">Sourav</h1>
                 <p className="text-gray-600 mt-2 text-sm">
                   Insightful Articles & Endless Inspiration.
                 </p>
