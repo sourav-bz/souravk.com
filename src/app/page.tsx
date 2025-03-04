@@ -1,9 +1,12 @@
+"use client";
+import { useState, useEffect } from "react";
 import { compareDesc, format } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default function BlogTimeline() {
+  // Sort posts by date (newest first)
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
@@ -16,23 +19,56 @@ export default function Home() {
     }
     acc[year].push(post);
     return acc;
-  }, {} as Record<number, typeof posts>);
+  }, {});
+
+  // Get years and sort them in descending order
+  const years = Object.keys(postsByYear)
+    .map(Number)
+    .sort((a, b) => b - a);
+
+  // Set the latest year as default selected year
+  const [selectedYear, setSelectedYear] = useState(
+    years.length > 0 ? years[0] : null
+  );
+
+  // Function to handle year selection
+  const handleYearClick = (year) => {
+    setSelectedYear(year);
+  };
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-12">ARTICLES</h1>
-
-      <div className="space-y-16">
-        {Object.entries(postsByYear).map(([year, yearPosts]) => (
-          <div key={year} className="relative">
-            <div
-              className="sticky top-8 text-sm text-gray-400"
-              style={{ float: "left", width: "60px" }}
-            >
-              {year}
+    <div className="w-full mx-auto">
+      <div className="flex gap-8">
+        {/* Years sidebar */}
+        <div className="w-16 flex-shrink-0 mt-[100px]">
+          <div className="sticky top-8 relative">
+            {/* Year buttons - rotated 90 degrees */}
+            <div className="relative space-y-12">
+              {years.map((year) => (
+                <button
+                  key={year}
+                  onClick={() => handleYearClick(year)}
+                  className={`block w-full text-center px-0 py-2 transition-colors ${
+                    selectedYear === year
+                      ? "text-black font-medium"
+                      : "text-gray-400 hover:text-gray-600"
+                  }`}
+                >
+                  <span className="inline-block transform -rotate-90 origin-center text-2xl">
+                    {year}
+                  </span>
+                </button>
+              ))}
             </div>
-            <div className="space-y-12 ml-20">
-              {yearPosts.map((post) => (
+          </div>
+        </div>
+
+        {/* Posts for selected year */}
+        <div className="flex-1">
+          <h1 className="text-3xl font-bold mb-12">BLOGS</h1>
+          <div className="space-y-12">
+            {selectedYear &&
+              postsByYear[selectedYear].map((post) => (
                 <article key={post._id} className="group">
                   <Link
                     href={post.url}
@@ -63,7 +99,7 @@ export default function Home() {
                         </span>
                       </div>
                     </div>
-                    {/* {post.image && (
+                    {post.image && (
                       <div className="w-32 h-24 relative rounded-lg overflow-hidden bg-gray-100">
                         <Image
                           src={post.image}
@@ -72,13 +108,12 @@ export default function Home() {
                           className="object-cover"
                         />
                       </div>
-                    )} */}
+                    )}
                   </Link>
                 </article>
               ))}
-            </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

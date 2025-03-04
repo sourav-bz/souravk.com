@@ -27,7 +27,7 @@ export default function PostContent({ post }: PostContentProps) {
           <div className="text-gray-500">By {post.author}</div>
         </div>
 
-        {/* {post.image && (
+        {post.image && (
           <div className="relative h-96 mb-8">
             <Image
               src={post.image}
@@ -37,7 +37,7 @@ export default function PostContent({ post }: PostContentProps) {
               priority
             />
           </div>
-        )} */}
+        )}
 
         <div className="prose prose-lg max-w-none">
           <MDXContent />

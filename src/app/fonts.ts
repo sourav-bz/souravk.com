@@ -1,5 +1,12 @@
 // app/fonts.js
 import localFont from "next/font/local";
+import { Fraunces } from "next/font/google";
+
+export const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["700", "900"],
+  variable: "--font-fraunces",
+});
 
 // Define the Satoshi Variable font (main font to use)
 export const satoshi = localFont({
