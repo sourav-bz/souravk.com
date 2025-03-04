@@ -1,12 +1,10 @@
-import "../styles/global.css";
-import { Inter } from "next/font/google";
-import Header from "@/components/Header";
-
-const inter = Inter({ subsets: ["latin"] });
+import "./global.css";
+import Link from "next/link";
+import { satoshi, fraunces } from "./fonts";
 
 export const metadata = {
-  title: "Your Blog Name",
-  description: "A blog about...",
+  title: "Sourav",
+  description: "Insightful Articles & Endless Inspiration.",
 };
 
 export default function RootLayout({
@@ -15,19 +13,50 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <footer className="bg-gray-50 border-t">
-            <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-              <p className="text-center text-gray-500 text-sm">
-                © {new Date().getFullYear()} Your Blog Name. All rights
-                reserved.
-              </p>
+    <html lang="en" className={`${satoshi.className} ${fraunces.className}`}>
+      <body>
+        <div className="min-h-screen bg-[#fff] flex">
+          {/* Sidebar */}
+          <aside className="w-64 bg-[#F3F3F6] border border-[#DBDBDB] p-8 mx-4 mt-4 mb-40 rounded-[14px]">
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-[34px] font-bold font-fraunces">Sourav</h1>
+                <p className="text-[#8A8484] text-[16px]">A Curious Seeker</p>
+              </div>
+
+              <nav className="space-y-1">
+                <Link
+                  href="/"
+                  className="block py-2 text-gray-800 hover:text-gray-600 font-medium"
+                >
+                  BLOGS
+                </Link>
+                <Link
+                  href="/newsletter"
+                  className="block py-2 text-gray-800 hover:text-gray-600"
+                >
+                  NEWSLETTER
+                </Link>
+                <Link
+                  href="/projects"
+                  className="block py-2 text-gray-800 hover:text-gray-600"
+                >
+                  PROJECTS
+                </Link>
+                <Link
+                  href="/about"
+                  className="block py-2 text-gray-800 hover:text-gray-600"
+                >
+                  ABOUT
+                </Link>
+              </nav>
             </div>
-          </footer>
+          </aside>
+
+          {/* Main content */}
+          <main className="ml-4 w-full">
+            <div className="mx-auto py-12 pr-24 pl-8">{children}</div>
+          </main>
         </div>
       </body>
     </html>
