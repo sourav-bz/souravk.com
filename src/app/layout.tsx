@@ -5,6 +5,10 @@ import SideBar from "@/components/SideBar";
 export const metadata = {
   title: "Sourav",
   description: "Insightful Articles & Endless Inspiration.",
+  icons: {
+    icon: "./favicon.ico",
+    shortcut: "./favicon.ico",
+  },
 };
 
 export default function RootLayout({
