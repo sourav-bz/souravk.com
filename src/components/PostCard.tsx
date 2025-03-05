@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { format, parseISO } from "date-fns";
+import dayjs from "dayjs";
 import { Post } from "contentlayer/generated";
 
 export default function PostCard({ post }: { post: Post }) {
@@ -19,7 +19,7 @@ export default function PostCard({ post }: { post: Post }) {
         )}
         <div className="p-6">
           <div className="text-sm text-gray-500 mb-2">
-            {format(parseISO(post.date), "MMMM dd, yyyy")}
+            {dayjs(post.date).format("D MMM YYYY")}
           </div>
           <h2 className="text-xl font-semibold text-gray-900 mb-2">
             {post.title}

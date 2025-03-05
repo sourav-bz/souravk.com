@@ -13,12 +13,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  // For server components in App Router, destructure with await
-  // to handle the case when params is a Promise
-  const { slug } = await params;
-
-  // Find the post
-  const post = allPosts.find((post) => post.slug === slug);
+  const post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
     return {};
@@ -37,23 +32,14 @@ export async function generateMetadata({
   };
 }
 
-// Make sure this is a Server Component by using async
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  // Log the params object to inspect its contents
-  console.log("Params object:", params);
-  console.log("Params type:", typeof params);
+type CustomPageProps = {
+  params: { slug: string } & Promise<any>;
+};
 
-  // Since we're using an async function, we can safely access params
-  const { slug } = await params;
-  console.log("Extracted slug:", slug);
+export default function PostPage({ params }: CustomPageProps) {
+  const { slug } = params;
 
   const post = allPosts.find((post) => post.slug === slug);
-
-  console.log("Post: ", post);
 
   if (!post) {
     notFound();

@@ -1,9 +1,9 @@
 "use client";
 
-import { format, parseISO } from "date-fns";
 import { useMDXComponent } from "next-contentlayer2/hooks";
 import { Post } from "contentlayer/generated";
 import Image from "next/image";
+import dayjs from "dayjs";
 
 interface PostContentProps {
   post: Post;
@@ -18,7 +18,7 @@ export default function PostContent({ post }: PostContentProps) {
       <div className="py-8">
         <div className="text-center mb-8">
           <time className="text-gray-500 mb-2 block">
-            {format(parseISO(post.date), "MMMM dd, yyyy")}
+            {dayjs(post.date).format("D MMM YYYY")}
           </time>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             {post.title}

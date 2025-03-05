@@ -1,5 +1,5 @@
 "use client";
-import { format } from "date-fns";
+import dayjs from "dayjs";
 import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,7 +41,7 @@ export default function BlogTimeline() {
                         SOURAV
                       </span>
                       <span className="text-sm text-gray-400">
-                        {format(new Date(post.date), "d MMM yyyy")}
+                        {dayjs(post.date).format("D MMM YYYY")}
                       </span>
                     </div>
                   </div>
