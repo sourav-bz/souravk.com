@@ -39,7 +39,7 @@ Here's a list of features:
 - Feature 2 with more information
 - Feature 3 with additional context
 
-### Code Example
+## Code Example
 
 Here's a code block with syntax highlighting:
 
@@ -65,7 +65,7 @@ Here's an ordered list:
 
 Here's a link to [GitHub](https://github.com) and another to [Google](https://google.com).
 
-### Nested Lists
+## Nested Lists
 
 - Main item 1
   - Sub-item 1.1
@@ -74,7 +74,7 @@ Here's a link to [GitHub](https://github.com) and another to [Google](https://go
   - Sub-item 2.1
   - Sub-item 2.2
 
-### Mixed Content
+#### Mixed Content
 
 Here's a paragraph with various elements:
 
