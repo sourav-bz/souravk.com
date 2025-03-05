@@ -11,6 +11,10 @@ A personal portfolio website built with Next.js and TypeScript, featuring a clea
 
 ## Updates
 
+### March 5, 2024 - 9:24pm
+
+Built this update feature for Sanjana, after our discussion yesterday!
+
 ### March 5, 2024 - 12:32pm
 
 - Added favicon to improve site branding
