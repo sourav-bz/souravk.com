@@ -13,13 +13,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${satoshi.className} ${fraunces.className}`}>
-      <body>
-        <div className="min-h-screen bg-[#fff] flex">
+    <html
+      lang="en"
+      className={`${satoshi.className} ${fraunces.className} h-full`}
+    >
+      <body className="h-full">
+        <div className="h-screen bg-[#fff] flex overflow-hidden">
           {/* Sidebar */}
           <SideBar />
           {/* Main content */}
-          <main className="ml-4 w-full">
+          <main className="ml-4 w-full overflow-y-auto">
             <div className="mx-auto py-12 pr-24 pl-8">{children}</div>
           </main>
         </div>

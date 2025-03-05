@@ -37,12 +37,11 @@ export default function BlogTimeline() {
   };
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full h-full mx-auto">
       <div className="flex gap-8">
         {/* Years sidebar */}
         <div className="w-16 flex-shrink-0 mt-[100px]">
           <div className="sticky top-8 relative">
-            {/* Year buttons - rotated 90 degrees */}
             <div className="relative space-y-12">
               {years.map((year) => (
                 <button
