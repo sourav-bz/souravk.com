@@ -20,7 +20,7 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8">Projects</h1>
+      {/* <h1 className="text-3xl font-bold mb-8">PROJECTS</h1> */}
       <div className="grid gap-6">
         {projects.map((project) => (
           <Link

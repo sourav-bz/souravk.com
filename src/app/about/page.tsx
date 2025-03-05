@@ -3,12 +3,11 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8">About Me</h1>
+      {/* <h1 className="text-3xl font-bold mb-8">ABOUT ME</h1> */}
 
       <div className="space-y-8">
         {/* Introduction Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
           <p className="text-gray-700 leading-relaxed">
             Hello! I&apos;m Sourav, a passionate developer and writer exploring
             the intersection of technology and human experience. I believe in

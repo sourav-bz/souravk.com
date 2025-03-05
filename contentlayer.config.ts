@@ -4,9 +4,9 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-export const Post = defineDocumentType(() => ({
-  name: "Post",
-  filePathPattern: `posts/**/*.mdx`,
+export const Blog = defineDocumentType(() => ({
+  name: "Blog",
+  filePathPattern: `blogs/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -33,19 +33,19 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: "string",
-      resolve: (doc) => doc._raw.flattenedPath.replace("posts/", ""),
+      resolve: (doc) => doc._raw.flattenedPath.replace("blogs/", ""),
     },
     url: {
       type: "string",
-      resolve: (post) =>
-        `/posts/${post._raw.flattenedPath.replace("posts/", "")}`,
+      resolve: (blog) =>
+        `/blogs/${blog._raw.flattenedPath.replace("blogs/", "")}`,
     },
   },
 }));
 
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Post],
+  documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

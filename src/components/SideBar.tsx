@@ -27,7 +27,7 @@ export default function SideBar() {
           <Link
             href="/"
             className={`block mb-4 px-3 transition-colors ${
-              isActive("/")
+              isActive("/blogs") || isActive("/")
                 ? "text-gray-900 font-medium border-l-2 border-black"
                 : "text-gray-800 hover:text-gray-600 hover:bg-gray-100"
             }`}
