@@ -29,7 +29,7 @@ A personal portfolio website built with Next.js and TypeScript, featuring a clea
 
 # Main Heading
 
-This is a paragraph with some **bold** and _italic_ text. You can also add \`inline code\` here.
+This is a paragraph with some **bold** and _italic_ text. You can also add `inline code` here.
 
 ## Subheading
 
@@ -43,14 +43,14 @@ Here's a list of features:
 
 Here's a code block with syntax highlighting:
 
-\`\`\`typescript
+```typescript
 function greet(name: string) {
 return \`Hello, \${name}!\`;
 }
 
 const user = "World";
 console.log(greet(user));
-\`\`\`
+```
 
 #### Smaller Heading
 
@@ -80,18 +80,18 @@ Here's a paragraph with various elements:
 
 1. First, we have some **bold text**
 2. Then, some _italic text_
-3. And some \`inline code\`
+3. And some `inline code`
 4. Finally, a [link](https://example.com)
 
 > **Note:** This is a blockquote with **bold** and _italic_ text.
 
-\`\`\`javascript
+```javascript
 // This is a comment
 const data = {
-name: "Test",
-value: 42,
-items: [1, 2, 3]
+  name: "Test",
+  value: 42,
+  items: [1, 2, 3],
 };
 
 console.log(data);
-\`\`\`
+```
