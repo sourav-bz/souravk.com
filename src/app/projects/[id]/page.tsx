@@ -21,9 +21,9 @@ const projects = {
       },
     ],
   },
-  portfolio: {
-    title: "Portfolio Website",
-    description: "A modern portfolio website built with Next.js",
+  "souravk-com": {
+    title: "souravk.com",
+    description: "A modern portfolio website built with Next.js & Contentlayer",
     category: "web",
     lastUpdated: "2024-03-05",
     updates: [
