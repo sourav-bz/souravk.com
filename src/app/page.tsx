@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { compareDesc, format } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
@@ -65,7 +65,7 @@ export default function BlogTimeline() {
 
         {/* Posts for selected year */}
         <div className="flex-1">
-          <h1 className="text-3xl font-bold mb-12">BLOGS</h1>
+          <h1 className="text-3xl font-bold mb-12">Blogs</h1>
           <div className="space-y-12">
             {selectedYear &&
               postsByYear[selectedYear].map((post) => (
