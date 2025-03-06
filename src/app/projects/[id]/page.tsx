@@ -67,9 +67,7 @@ export default async function ProjectPage({
     );
   }
 
-  // Fetch GitHub README updates
   const updates = await fetchGitHubUpdatesFromFolder(project.github);
-  console.log("updates", updates);
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
