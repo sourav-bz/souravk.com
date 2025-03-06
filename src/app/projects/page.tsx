@@ -10,8 +10,6 @@ export default function ProjectsPage() {
     (a, b) => dayjs(b.lastUpdated).unix() - dayjs(a.lastUpdated).unix()
   );
 
-  console.log(allProjects);
-
   return (
     <div className="max-w-4xl mx-auto">
       <div className="grid gap-6">
