@@ -6,13 +6,13 @@ import { PiVideoFill } from "react-icons/pi";
 
 // This would typically come from a database or CMS
 const projects = {
-  "showfer-ai": {
-    title: "Showfer AI",
-    description: "An AI-powered chatbot for showing off your projects",
-    category: "ai",
+  "building-with-rust": {
+    title: "Building with Rust",
+    description: "A blog about building with Rust",
+    category: "rust",
     lastUpdated: "2024-03-05",
-    github: "https://github.com/sourav-bz/showfer-ai",
-    demo: "https://showfer.ai",
+    github: "https://github.com/sourav-bz/building-with-rust",
+    demo: null,
   },
   "souravk-com": {
     title: "souravk.com",
@@ -21,6 +21,14 @@ const projects = {
     lastUpdated: "2024-03-05",
     github: "https://github.com/sourav-bz/souravk.com",
     demo: "https://souravk.com",
+  },
+  "showfer-ai": {
+    title: "Showfer AI",
+    description: "An AI-powered chatbot for showing off your projects",
+    category: "ai",
+    lastUpdated: "2024-03-05",
+    github: "https://github.com/sourav-bz/showfer-ai",
+    demo: "https://showfer.ai",
   },
 };
 
@@ -99,14 +107,16 @@ export default async function ProjectPage({
               <FaGithub />
               <span className="text-[#8A8484]">View on GitHub</span>
             </Link>
-            <Link
-              href={project.demo ?? ""}
-              className="flex items-center gap-2 text-gray-500 bg-[#F5F5F5] px-2 py-1 rounded-full"
-              target="_blank"
-            >
-              <PiVideoFill />
-              <span className="text-[#8A8484]">Checkout Demo</span>
-            </Link>
+            {project.demo && (
+              <Link
+                href={project.demo ?? ""}
+                className="flex items-center gap-2 text-gray-500 bg-[#F5F5F5] px-2 py-1 rounded-full"
+                target="_blank"
+              >
+                <PiVideoFill />
+                <span className="text-[#8A8484]">Checkout Demo</span>
+              </Link>
+            )}
           </div>
         </div>
 
