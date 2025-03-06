@@ -10,3 +10,5 @@ A personal portfolio website built with Next.js and TypeScript, featuring a clea
 - Contentlayer for content management
 
 ## Updates
+
+Check out the update logs of this project here => https://souravk.com/projects/souravk.com

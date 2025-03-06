@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { fetchGitHubReadme } from "@/utils/github";
+import { fetchGitHubUpdatesFromFolder } from "@/utils/github";
 import MarkdownContent from "@/components/MarkdownContent";
 import { FaGithub } from "react-icons/fa";
 import { PiVideoFill } from "react-icons/pi";
@@ -68,7 +68,8 @@ export default async function ProjectPage({
   }
 
   // Fetch GitHub README updates
-  const updates = await fetchGitHubReadme(project.github);
+  const updates = await fetchGitHubUpdatesFromFolder(project.github);
+  console.log("updates", updates);
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
