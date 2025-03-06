@@ -2,38 +2,16 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { PiVideoFill } from "react-icons/pi";
 import { FaChevronRight } from "react-icons/fa";
-
-const projects = [
-  {
-    id: "building-with-rust",
-    title: "Building with Rust",
-    description:
-      "A repo documenting the journey of building and playing around with Rust",
-    category: "rust",
-    lastUpdated: "2024-03-05",
-    github: "https://github.com/sourav-bz/building-with-rust",
-  },
-  {
-    id: "souravk-com",
-    title: "souravk.com",
-    description: "A modern portfolio website built with Next.js & Contentlayer",
-    category: "web",
-    lastUpdated: "2024-03-05",
-    github: "https://github.com/sourav-bz/souravk.com",
-    demo: "https://souravk.com",
-  },
-  {
-    id: "showfer-ai",
-    title: "Showfer AI",
-    description: "An AI-powered chatbot for showing off your projects",
-    category: "ai",
-    lastUpdated: "2024-03-05",
-    github: "https://github.com/sourav-bz/showfer-ai",
-    demo: "https://showfer.ai",
-  },
-];
+import { allProjects } from "contentlayer/generated";
+import dayjs from "dayjs";
 
 export default function ProjectsPage() {
+  const projects = allProjects.sort(
+    (a, b) => dayjs(b.lastUpdated).unix() - dayjs(a.lastUpdated).unix()
+  );
+
+  console.log(allProjects);
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="grid gap-6">

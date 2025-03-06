@@ -3,41 +3,16 @@ import { fetchGitHubUpdatesFromFolder } from "@/utils/github";
 import MarkdownContent from "@/components/MarkdownContent";
 import { FaGithub } from "react-icons/fa";
 import { PiVideoFill } from "react-icons/pi";
-
-// This would typically come from a database or CMS
-const projects = {
-  "building-with-rust": {
-    title: "Building with Rust",
-    description: "A blog about building with Rust",
-    category: "rust",
-    lastUpdated: "2024-03-05",
-    github: "https://github.com/sourav-bz/building-with-rust",
-    demo: null,
-  },
-  "souravk-com": {
-    title: "souravk.com",
-    description: "A modern portfolio website built with Next.js & Contentlayer",
-    category: "web",
-    lastUpdated: "2024-03-05",
-    github: "https://github.com/sourav-bz/souravk.com",
-    demo: "https://souravk.com",
-  },
-  "showfer-ai": {
-    title: "Showfer AI",
-    description: "An AI-powered chatbot for showing off your projects",
-    category: "ai",
-    lastUpdated: "2024-03-05",
-    github: "https://github.com/sourav-bz/showfer-ai",
-    demo: "https://showfer.ai",
-  },
-};
+import { allProjects } from "contentlayer/generated";
 
 export default async function ProjectPage({
   params,
 }: {
   params: { id: string };
 }) {
-  const project = projects[params.id as keyof typeof projects];
+  const project = allProjects.find(
+    (p) => p._raw.flattenedPath === `projects/${params.id}`
+  );
 
   if (!project) {
     return (
