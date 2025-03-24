@@ -1,7 +1,8 @@
 ---
-title: "Releasing Showfer.ai and What's Up"
+title: "Releasing Showfer.ai and What's Up Next"
 date: "2024-03-24"
-description: "Announcing the release of Showfer.ai, an AI mascot platform for brands, and updates on the robotics software development journey."
+description: "Announcing the launch of Showfer.ai, sharing the journey of its development, and discussing future plans for robotics and AI projects."
+author: "Sourav"
 ---
 
 Hey everyone! It's been a while since I wrote an update on the journey. I held off on sharing anything until I had something tangible to release, and now that time has come!
@@ -32,7 +33,7 @@ Here are some realizations I had during and after the demo:
 
 - **Tech Challenges**: The infrastructure to support voice-to-voice AI conversations over the internet is still in its infancy. WebRTC connections, for instance, are expensive. _We often take platforms like Google Meet for granted because, well, it's Google_.
 - **Costly SaaS Solutions**: Some SaaS products attempt to solve this issue, but they charge per minute of conversation, which doesn't fit well with current internet usage patterns where users interaction with internet is unmetered.
-- **RAG on LLMs is Slow**: Retrieval-Augmented Generation (RAG) on LLMs takes more than 2-3 seconds to respond, which isn't ideal for real-time interactions (ideally <0.2 seconds).
+- **RAG on LLMs is Slow**: Retrieval-Augmented Generation (RAG) on LLMs takes more than 2-3 seconds to respond, which isn't ideal for real-time interactions (ideally &lt;0.2 seconds).
 - **Text-to-Speech is Expensive**: The cost isn't just financial—it's also an architectural issue. Humans communicate voice-to-voice and process conversations in real-time. Current systems, however, convert voice to text, process it through the LLM, then convert it back to speech. We need **speech-to-speech architecture**. There are some early glimpses of this, with companies like OpenAI stepping into the game with real-time APIs, and there are others too ([moshi](https://github.com/kyutai-labs/moshi)).
 
 Despite these challenges, I'm more excited about **finding the right distribution channels** for the product than solving these technical issues. The LLM tech is only going to get better and affordable _(LLMs are 90% cheaper in just 1 year)._
